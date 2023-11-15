@@ -1,10 +1,10 @@
 import React from 'react';
 // import './DisplayStyle.css';
 
-function Display(props) {
+function Display({ display }) {
     return (
         <p>
-            {props.total}
+            {display}
         </p>
     )
 }

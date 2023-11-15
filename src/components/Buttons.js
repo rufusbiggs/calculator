@@ -1,40 +1,42 @@
 import React from 'react';
 import SingleButton from './SingleButton';
-import DoubleButton from './DoubleButton';
+import ActionButton from './ActionButton';
 
-const divideSymbol='\u00F7';
 
-function Buttons() {
+const DIVIDE_SYMBOL = '\u00F7';
+
+function Buttons(props) {
+
     return (
         <div className='buttons'>
             <div className='top-row'>
-                <SingleButton buttonSymbol='AC' />
-                <SingleButton buttonSymbol='+/-' />
-                <SingleButton buttonSymbol='%' />
-                <SingleButton buttonSymbol={divideSymbol} />
+                <ActionButton buttonSymbol='AC' name='clear' {...props} />
+                <ActionButton buttonSymbol='+/-' name='inverse' {...props} />
+                <ActionButton buttonSymbol='%' name='percentage' {...props} />
+                <ActionButton buttonSymbol={DIVIDE_SYMBOL} name='divide' {...props} />
             </div>
             <div className='top-row'>
-                <SingleButton buttonSymbol='7' />
-                <SingleButton buttonSymbol='8' />
-                <SingleButton buttonSymbol='9' />
-                <SingleButton buttonSymbol='x' />
+                <SingleButton buttonSymbol='7' {...props} />
+                <SingleButton buttonSymbol='8' {...props} />
+                <SingleButton buttonSymbol='9' {...props} />
+                <ActionButton buttonSymbol='x' name='multiply' {...props} />
             </div>
             <div className='top-row'>
-                <SingleButton buttonSymbol='4' />
-                <SingleButton buttonSymbol='5' />
-                <SingleButton buttonSymbol='6' />
-                <SingleButton buttonSymbol='-' />
+                <SingleButton buttonSymbol='4' {...props} />
+                <SingleButton buttonSymbol='5' {...props} />
+                <SingleButton buttonSymbol='6' {...props} />
+                <ActionButton buttonSymbol='-' name='subtract' {...props} />
             </div>
             <div className='top-row'>
-                <SingleButton buttonSymbol='1' />
-                <SingleButton buttonSymbol='2' />
-                <SingleButton buttonSymbol='3' />
-                <SingleButton buttonSymbol='+' />
+                <SingleButton buttonSymbol='1' {...props} />
+                <SingleButton buttonSymbol='2' {...props} />
+                <SingleButton buttonSymbol='3' {...props} />
+                <ActionButton buttonSymbol='+' name='sum' {...props} />
             </div>
             <div className='top-row'>
-                <DoubleButton buttonSymbol='0' />
-                <SingleButton buttonSymbol='.' />
-                <SingleButton buttonSymbol='=' />
+                <SingleButton buttonSymbol='0' {...props} />
+                <ActionButton buttonSymbol='.' name='decimal' {...props} />
+                <ActionButton buttonSymbol='=' name='equals' {...props} />
             </div>
         </div>
     )   
