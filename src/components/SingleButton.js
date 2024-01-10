@@ -1,7 +1,7 @@
 import React from 'react';
 // import './SingleButtonStyle.css';
 
-function SingleButton({ buttonSymbol, input, setInput, setDisplay }) {
+function SingleButton({ name, buttonSymbol, input, setInput, setDisplay, inputArray }) {
 
     const handleNumberPress = () => {
         const numberValue = Number(buttonSymbol);
@@ -10,8 +10,8 @@ function SingleButton({ buttonSymbol, input, setInput, setDisplay }) {
             setDisplay(numberValue);
         }
         else {
-            const inputArray = [input, numberValue];
-            const inputJoined = Number(inputArray.join(''));
+            const calcArray = [input, numberValue];
+            const inputJoined = Number(calcArray.join(''));
             setInput(inputJoined);
             setDisplay(inputJoined);
         }
@@ -19,7 +19,7 @@ function SingleButton({ buttonSymbol, input, setInput, setDisplay }) {
     }
 
     return (
-        <button className='singleButton'
+        <button className='singleButton' id={name}
             type='button'
             onClick={handleNumberPress}
         >

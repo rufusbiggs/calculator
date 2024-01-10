@@ -58,13 +58,21 @@ function App() {
     Scans inputArray and performs operations 
     in correct order.
   */
+
+  let equalsCount = 0;
+
   const handleEquals = () => {
     // Create new inputArray so not mutating our state and add latest input
     const operationArray = inputArray;
     operationArray.push(input);
 
+
     // Perform Multiplications
     console.log('doing some multiplication');
+    console.log('Operation Array:' + operationArray);
+    console.log('Input Array:' + inputArray);
+    console.log('Input:' + input);
+
     let i = 0;
     while (i < operationArray.length){
       if (operationArray[i] === 'multiply'){
@@ -104,23 +112,32 @@ function App() {
     } 
 
     setDisplay(operationArray);
+    setInput(operationArray);
+
+    console.log('Operation Array:' + operationArray);
+    console.log('Input Array:' + inputArray);
+    console.log('Input:' + input);
+
   }
   
 
   return (
-    <div className="Calculator">
-      <Display display={display} />
-      <Buttons 
-        setInputArray= {setInputArray}
-        inputArray={inputArray}
-        setInput={setInput} 
-        input={input} 
-        setDisplay={setDisplay} 
-        display={display}
-        singleValueOperations={singleValueOperations}
-        handleEquals={handleEquals}
-      />
-      
+    <div>
+      <div className="calculator">
+        <div className="display">
+          <Display display={display} />
+        </div>
+        <Buttons 
+          setInputArray= {setInputArray}
+          inputArray={inputArray}
+          setInput={setInput} 
+          input={input} 
+          setDisplay={setDisplay} 
+          display={display}
+          singleValueOperations={singleValueOperations}
+          handleEquals={handleEquals}
+        />
+      </div>
     </div>
   );
 }

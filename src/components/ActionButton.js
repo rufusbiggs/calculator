@@ -1,7 +1,7 @@
 import React from 'react';
 // import './SingleButtonStyle.css';
 
-function ActionButton({ singleValueOperations, name, buttonSymbol, input, setInputArray, setInput, handleEquals }) {
+function ActionButton({ singleValueOperations, name, buttonSymbol, input, setInputArray, setInput, handleEquals, inputArray }) {
 
     /* --- Handles Operation --- 
     * Checks type of math symbol inputted
@@ -14,8 +14,14 @@ function ActionButton({ singleValueOperations, name, buttonSymbol, input, setInp
         }
 
         if (['multiply', 'divide', 'subtract', 'sum'].includes(name)){
-            setInputArray((prev) => [...prev, input, name]);
-            setInput(0);
+            if (inputArray.length === 1){
+                setInputArray((prev) => [...prev, name]);
+                setInput(0);
+            }
+            else {
+                setInputArray((prev) => [...prev, input, name]);
+                setInput(0);
+            }
         }
 
         if (name === 'equals'){
@@ -24,7 +30,7 @@ function ActionButton({ singleValueOperations, name, buttonSymbol, input, setInp
     }
 
     return (
-        <button className='singleButton'
+        <button id={name} className='singleButton'
             type='button'
             onClick={handleOperation}
         >

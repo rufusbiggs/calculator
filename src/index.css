@@ -1,13 +1,73 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #5f5f5f;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calculator {
+  margin: 1rem;
+  border: solid 1px rgb(58, 58, 58);
+  border-radius: 8px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleButton {
+  background-color: rgb(116, 116, 116);
+  color: white;
+  border: none;
+  outline: none;
+  height: 3rem;
+  width: 3.5rem;
+  border: solid 0.5px rgb(58, 58, 58);
+  font-size: 18px;
+}
+
+#clear, #inverse, #percentage {
+  background-color: rgb(68, 67, 67);
+}
+
+#divide, #multiply, #subtract, #sum, #equals {
+  background-color: rgb(220, 101, 3);
+}
+
+#zero {
+  width: 7rem;
+  border-bottom-left-radius: 8px;
+}
+
+#equals {
+  border-bottom-right-radius: 8px;
+}
+
+.display {
+  display: flex;
+  justify-content: right;
+  padding: 0.5rem;
+  background-color:rgb(58, 58, 58);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+p {
+  font-size: 3rem;
+  color: white;
+  margin: 0.5rem 0;
 }

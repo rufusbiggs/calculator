@@ -34,7 +34,7 @@ function Buttons(props) {
                 <ActionButton buttonSymbol='+' name='sum' {...props} />
             </div>
             <div className='top-row'>
-                <SingleButton buttonSymbol='0' {...props} />
+                <SingleButton buttonSymbol='0' name="zero" {...props} />
                 <ActionButton buttonSymbol='.' name='decimal' {...props} />
                 <ActionButton buttonSymbol='=' name='equals' {...props} />
             </div>
