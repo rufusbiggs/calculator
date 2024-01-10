@@ -59,8 +59,6 @@ function App() {
     in correct order.
   */
 
-  let equalsCount = 0;
-
   const handleEquals = () => {
     // Create new inputArray so not mutating our state and add latest input
     const operationArray = inputArray;
@@ -69,10 +67,6 @@ function App() {
 
     // Perform Multiplications
     console.log('doing some multiplication');
-    console.log('Operation Array:' + operationArray);
-    console.log('Input Array:' + inputArray);
-    console.log('Input:' + input);
-
     let i = 0;
     while (i < operationArray.length){
       if (operationArray[i] === 'multiply'){
@@ -113,10 +107,6 @@ function App() {
 
     setDisplay(operationArray);
     setInput(operationArray);
-
-    console.log('Operation Array:' + operationArray);
-    console.log('Input Array:' + inputArray);
-    console.log('Input:' + input);
 
   }
   
